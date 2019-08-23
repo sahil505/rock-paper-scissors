@@ -53,8 +53,10 @@ function showWinner(winner, computerChoice) {
     // Show modal result
     result.innerHTML = `
       <h1 class="text-win">You Win!</h1>
-      <p>Computer chose <strong>${computerChoice}</strong></p>
+      <hr>
       <i class="fas fa-hand-${computerChoice} fa-10x"></i>
+      <p>Computer chose <strong>${computerChoice.charAt(0).toUpperCase() +
+        computerChoice.slice(1)}</strong></p>
     `;
   } else if(winner === 'computer') {
     // Inc computer score
@@ -62,8 +64,10 @@ function showWinner(winner, computerChoice) {
     // Show modal result
     result.innerHTML = `
       <h1 class="text-lose">You Lose!</h1>
-      <p>Computer chose <strong>${computerChoice}</strong></p>
+      <hr>
       <i class="fas fa-hand-${computerChoice} fa-10x"></i>
+      <p>Computer chose <strong>${computerChoice.charAt(0).toUpperCase() +
+        computerChoice.slice(1)}</strong></p>
     `;
   } else {
     // Show modal result
@@ -71,7 +75,8 @@ function showWinner(winner, computerChoice) {
       <h1>It's a Draw!</h1>
       <hr>
       <i class="fas fa-hand-${computerChoice} fa-10x"></i>
-      <p>Computer chose <strong>${computerChoice}</strong></p>
+      <p>Computer chose <strong>${computerChoice.charAt(0).toUpperCase() +
+        computerChoice.slice(1)}</strong></p>
     `;
   }
   // Show score
