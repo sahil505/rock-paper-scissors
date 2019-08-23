@@ -13,20 +13,36 @@ function play(e) {
   restart.style.display = 'inline-block';
   const playerChoice = e.target.id;
   const computerChoice = getComputerChoice();
+  const winner = getWinner(playerChoice, computerChoice);
 
-  console.log(playerChoice, computerChoice);
+  console.log(playerChoice, computerChoice, winner);
 }
 
 // Get computers choices
 function getComputerChoice() {
   const rand = Math.random();
   if (rand < 0.34) {
-    return 'Rock';
+    return 'rock';
   } else if (rand <= 0.67) {
-    return 'Paper';
+    return 'paper';
   } else {
-    return 'Scissors';
+    return 'scissors';
   }
+}
+
+// Get game winner
+function getWinner(pc, cc) {
+  if(pc === cc) return 'draw';
+  else if (pc === 'rock') {
+    if(cc === 'paper') return 'computer';
+    else return 'player';
+  } else if (pc === 'paper') {
+    if(cc === 'scissors') return 'computer';
+    else return 'player';
+  } else if (pc === 'scissors') {
+      if(cc === 'rock') return 'computer';
+      else return 'player';
+    }
 }
 
 // Event Listener
