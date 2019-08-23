@@ -12,6 +12,21 @@ const scoreboard = {
 function play(e) {
   restart.style.display = 'inline-block';
   const playerChoice = e.target.id;
+  const computerChoice = getComputerChoice();
+
+  console.log(playerChoice, computerChoice);
+}
+
+// Get computers choices
+function getComputerChoice() {
+  const rand = Math.random();
+  if (rand < 0.34) {
+    return 'Rock';
+  } else if (rand <= 0.67) {
+    return 'Paper';
+  } else {
+    return 'Scissors';
+  }
 }
 
 // Event Listener
